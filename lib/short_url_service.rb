@@ -1,6 +1,6 @@
 # generate short URL with the bitly API
 class ShortUrlService
-  BITLY_SHORTEN_LINK = 'https://api-ssl.bitly.com/v4/shorten'
+  BITLY_SHORTEN_LINK = 'https://api-ssl.bitly.com/v4/shorten'.freeze
   BITLY_HEADERS = {
     'Content-Type' => 'application/json',
     'Authorization' => 'Bearer 5110ef7f568b05c80c8ff575b332c780c8229cb0'

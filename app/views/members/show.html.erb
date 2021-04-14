@@ -9,4 +9,13 @@
       <p><%= link_to 'Short URL', @member.short_url if @member.short_url.present? %></p>
     </div>
   </div>
+
+  <div class='card'>
+    <div class='card-content'>
+      <h3>Topics</h3>
+      <% @headings.each do |heading| %>
+        <p><%= heading.content %></p>
+      <% end %>
+    </div>
+  </div>
 </div>

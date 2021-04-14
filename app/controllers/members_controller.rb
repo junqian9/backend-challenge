@@ -9,6 +9,7 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    @headings = @member.headings.page(params[:page]).per(15)
   end
 
   def create
@@ -32,5 +33,6 @@ class MembersController < ApplicationController
 
   def schedule_related_jobs(id, website_url)
     MemberShortUrlJob.perform_now(id, website_url)
+    MemberPullHeadingsJob.perform_now(id, website_url)
   end
 end

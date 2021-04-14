@@ -16,9 +16,10 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
+        schedule_related_jobs(@member.id, @member.website_url)
         format.html { redirect_to members_path }
       else
-        format.html {render action: 'new'}
+        format.html { render action: 'new' }
       end
     end
   end
@@ -27,5 +28,9 @@ class MembersController < ApplicationController
 
   def permitted_params
     params.require(:member).permit(:name, :website_url)
+  end
+
+  def schedule_related_jobs(id, website_url)
+    MemberShortUrlJob.perform_now(id, website_url)
   end
 end

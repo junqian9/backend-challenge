@@ -29,6 +29,8 @@ gem 'rubocop-rails', require: false
 
 gem 'kaminari'
 gem 'nokogiri'
+# working with HTTP APIs
+gem 'httparty'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

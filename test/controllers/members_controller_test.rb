@@ -11,17 +11,6 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should be able to create member' do
-    assert_difference 'Member.count' do
-      post members_path, params: {
-        member: {
-          name: 'Bart',
-          website_url: 'abc.com/efg'
-        }
-      }
-    end
-  end
-
   test 'should be able to visit member show' do
     get member_path(@homer.id)
 

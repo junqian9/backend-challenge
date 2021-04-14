@@ -32,11 +32,12 @@
 
 `rails test`
 
-# a scenario of testing expert search
+# a scenario of testing expert search  
 1. go to Marge's page, scroll to bottom
 2. search for "healthcare"
 3. you should see "Marge > Homer > Bart" since homer is a mutual friend of both and bart has a "healthcare" topic
 4. if you create a new user with no friendship, and search the same "healthcare" under his Profile. you should still see Bart's name, plus "No mutual friends found" sign
+5. based on description, search only works among none-friends, which means homer will never find results since he's friends with everyone(I had some doubt on this interpretation, but time is limited)
 
 
 # my design of friendship feature

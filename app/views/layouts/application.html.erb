@@ -8,9 +8,23 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <!-- navigation section -->
+    <section>
+      <nav>
+        <div class='nav-wrapper blue'>
+          <ul class='left'>
+            <li><%= link_to 'Members', root_url %></li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <!-- body section -->
+    <section>
+      <%= yield %>
+    </section>
   </body>
 </html>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1><%= @member.name %></h1>
+
+  <div class='card'>
+    <div class='card-content'>
+      <h3>Profile</h3>
+      <p><i class="large material-icons">face</i></p>
+      <p><%= link_to 'Website URL', @member.website_url %></p>
+      <p><%= link_to 'Short URL', @member.short_url if @member.short_url.present? %></p>
+    </div>
+  </div>
+</div>

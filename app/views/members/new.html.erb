@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Create a new Member</h1>
+  <%= form_for @member do |f| %>
+    <div class='input-field'>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= error_message @member, :name %>
+    </div>
+    <div class='input-field'>
+      <%= f.label :website_url %>
+      <%= f.text_field :website_url %>
+      <%= error_message @member, :website_url %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn btn-large' %>
+  <% end %>
+</div>

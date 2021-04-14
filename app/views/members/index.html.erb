@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Members List</h1>
+  <%= link_to 'Add New member', new_member_path, class: 'btn' %>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Short URL</th>
+      <th>Friends Number</th>
+    </tr>
+
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= link_to member.name, member %></td>
+        <td><%= link_to member.short_url, member.short_url if member.short_url.present? %></td>
+        <td>0</td>
+      </tr>
+    <% end %>
+  </table>
+</div>

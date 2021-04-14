@@ -17,3 +17,11 @@
 3. `rails db:migrate`
 
 4. `rails db:seed`
+
+### [TO-DO List](#to-do-list)
+1. init app, add Gems, setup environment, set up a UI framework
+2. be able to create members
+3. be able to generate short_url based on website_url members provided
+4. be able to pull headings into DB based on website_url members provided
+5. be able to make friends, bi-directional friendship
+6. be able to search expert from none-friend

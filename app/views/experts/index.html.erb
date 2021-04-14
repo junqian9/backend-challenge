@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Experts for <%= @member.name %></h1>
+
+  <% if @matchings.present? %>
+    <% @matchings.each do |expert| %>
+      <div class="card blue">
+        <% if expert.is_a?(Array) %>
+          <%= link_to @member.name, @member, class: "breadcrumb" %>
+          <%= link_to expert.first.name, expert.first, class: "breadcrumb" %>
+          <%= link_to expert.last.name, expert.last, class: "breadcrumb" %>
+        <% else %>
+          <%= link_to expert.name, expert %>
+          <p>No mutual friends found</p>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <h4 class=''>There's no matching expert, please try another topic.</h4>
+    <%= link_to 'Go back', member_path(@member) %>
+  <% end %>
+</div>

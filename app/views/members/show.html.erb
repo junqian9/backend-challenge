@@ -45,4 +45,18 @@
       </table>
     </div>
   </div>
+
+  <div class='card'>
+    <div class='card-content'>
+      <h3>Search Expert By topic</h3>
+      <p>type in a topic to see how you can reach the expert</p>
+      <%= form_tag member_experts_path(@member), method: :get do %>
+        <div class='input-field'>
+          <%= label_tag :search %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Find Expert", class: 'btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

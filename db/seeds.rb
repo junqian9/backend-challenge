@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+homer = Member.create!(name: 'Homer', website_url: 'https://www.everlywell.com/blog/sleep-and-stress/migraines-possible-causes/')
+marge = Member.create!(name: 'Marge', website_url: 'https://www.everlywell.com/blog/sti-testing/are-any-stds-not-curable/')
+lisa = Member.create!(name: 'Lisa', website_url: 'https://www.everlywell.com/blog/womens-health/how-do-you-boost-fertility/')
+bart = Member.create!(name: 'Bart', website_url: 'https://www.everlywell.com/blog/colon-cancer/2021-health-care-trends/')
+
+MemberShortUrlJob.perform_now(homer.id, homer.website_url)
+MemberPullHeadingsJob.perform_now(homer.id, homer.website_url)
+MemberShortUrlJob.perform_now(marge.id, marge.website_url)
+MemberPullHeadingsJob.perform_now(marge.id, marge.website_url)
+MemberShortUrlJob.perform_now(lisa.id, lisa.website_url)
+MemberPullHeadingsJob.perform_now(lisa.id, lisa.website_url)
+MemberShortUrlJob.perform_now(bart.id, bart.website_url)
+MemberPullHeadingsJob.perform_now(bart.id, bart.website_url)
+
+homer.befriend(marge)
+marge.befriend(homer)
+homer.befriend(lisa)
+lisa.befriend(homer)
+homer.befriend(bart)
+bart.befriend(homer)
+lisa.befriend(bart)
+bart.befriend(lisa)

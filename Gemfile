@@ -31,7 +31,8 @@ gem 'kaminari'
 gem 'nokogiri'
 # working with HTTP APIs
 gem 'httparty'
-
+# working with friendships
+gem 'popular'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

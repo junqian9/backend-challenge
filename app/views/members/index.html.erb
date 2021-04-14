@@ -13,7 +13,7 @@
       <tr>
         <td><%= link_to member.name, member %></td>
         <td><%= link_to member.short_url, member.short_url if member.short_url.present? %></td>
-        <td>0</td>
+        <td><%= member.friendships.count %></td>
       </tr>
     <% end %>
   </table>

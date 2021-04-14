@@ -18,4 +18,31 @@
       <% end %>
     </div>
   </div>
+
+  <div class='card'>
+    <div class='card-content'>
+      <h3>Friend</h3>
+      <table>
+        <tbody>
+          <% @other_members.each do |member| %>
+            <tr>
+              <td class="">
+                <%= member.name %>
+              </td>
+              <td>
+                <%= link_to 'Visit Page', member_path(member) %>
+              </td>
+              <td class="">
+                <% if !@friends.include?(member) %>
+                  <%= link_to "Add Friend", new_member_friendship_path(id: @member.id, member_id: member.id), data: { confirm: 'Are you sure?' } %>
+                <% else %>
+                  <%= link_to "Remove Friend", member_friendship_path(member), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
+  popular
   has_many :headings
 
   validates :name, presence: true, uniqueness: true

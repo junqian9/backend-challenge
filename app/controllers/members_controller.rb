@@ -10,6 +10,8 @@ class MembersController < ApplicationController
   def show
     @member = Member.find(params[:id])
     @headings = @member.headings.page(params[:page]).per(15)
+    @other_members = Member.where.not(id: @member)
+    @friends = Member.find(@member.friendships.pluck("friend_id"))
   end
 
   def create
